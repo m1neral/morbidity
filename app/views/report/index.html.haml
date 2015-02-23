@@ -1,0 +1,6 @@
+%h1 Веб-отчёт по заболеваниям
+
+= render partial: 'form'
+
+- unless @report.nil?
+  = render partial: 'report'

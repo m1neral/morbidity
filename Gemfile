@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'mysql2'
-
 gem 'haml'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
