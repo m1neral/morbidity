@@ -7,4 +7,12 @@ class Statistic < ActiveRecord::Base
           disease_id: disease_id,
           hospital_id: hospital_id
   end
+
+  def self.find_first_month
+    minimum :date
+  end
+
+  def self.find_last_month
+    maximum :date
+  end
 end

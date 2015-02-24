@@ -1,6 +1,6 @@
 = form_tag report_handling_path do
   = select_tag 'territory', options_from_collection_for_select(@fos, :id, :name)
-  #datepicker.input-append.date{"data-date" => "02-2012", "data-date-format" => "mm-yyyy"}
-    %input{:name => "date", :readonly => "readonly", :type => "text"}
+  #datepicker.input-append.date{'data-date-start-date' => @first_month, 'data-date-end-date' => @last_month}
+    %input{:name => 'date', :readonly => 'readonly', :type => 'text', 'value' => @last_month}
       %span.add-on
   = submit_tag 'Обновить'
