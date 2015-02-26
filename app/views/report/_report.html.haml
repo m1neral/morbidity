@@ -1,3 +1,26 @@
 %h2
-  = @report_title
+  Отчёт на дату
+  = @report[:date]
+  по ФО:
+  = @report[:fo].name
+
+%table.table.table-bordered
+  %thead
+    %tr
+      %th Наименование субъекта
+      %th Наименование больницы
+      %th Наименование болезни
+      %th Число заболевших
+      %th Число выздоровевших
+      %th Тенденция
+  %tbody
+    - @report[:result].each do |line|
+      %tr
+        %td= line.territory_name
+        %td= line.hospital_name
+        %td= line.disease_name
+        %td= line.patients
+        %td= line.issued
+        %td= line.issued - line.patients
+
 
