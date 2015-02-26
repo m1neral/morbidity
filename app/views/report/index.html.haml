@@ -1,6 +1,6 @@
 .jumbotron
   %h1 Веб-отчёт по заболеваниям
-  %p= render partial: 'form'
+  = render partial: 'form'
 
 - unless @report.nil?
   = render partial: 'report'
