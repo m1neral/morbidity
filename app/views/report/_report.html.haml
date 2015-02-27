@@ -16,11 +16,11 @@
   %tbody
     - @report[:result].each do |line|
       - tendency = line.issued - line.patients
-      - color = if tendency > 0 then 'green' elsif tendency < 0 then 'red' else 'white' end
-      %tr{class: color}
+      - tendency_color = if tendency > 0 then 'green' elsif tendency < 0 then 'red' else 'black' end
+      %tr
         %td= line.territory_name
         %td= line.hospital_name
         %td= line.disease_name
         %td= line.patients
         %td= line.issued
-        %td= tendency
+        %td.tendency{style: "color: #{tendency_color};"}= tendency
